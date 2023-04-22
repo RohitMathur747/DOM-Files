@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello world</h1>
+
+    <button onkeydown="mybtn1()">Click ME</button>
+    <button onkeyup="mybtn2()">Click ME</button>
+
+    <button onmousedown="mybtn()">Click ME</button>
+    <button onmouseout="mybtn1()">Click ME</button>
+    <button onmouseenter="mybtn2()">Click ME</button>
+    <button onmouseleave="mybtn1()">Click ME</button>
+    <button onclick="mybtn()">Click Me</button>
+    <button onclick="mybtn1()">Click Me</button>
+    <button onclick="mybtn2()">Click Me</button>
+    <script>
+        function mybtn(){
+            document.body.style.backgroundColor = '#3b5999';
+            document.body.style.color = 'white';
+        }
+        function mybtn1(){
+            document.body.style.backgroundColor = '#cd201f';
+            document.body.style.color = 'white';
+        }
+        function mybtn2(){
+            document.body.style.backgroundColor = '#25D366';
+            document.body.style.color = 'white';
+        }
+    </script>
+</body>
+</html>

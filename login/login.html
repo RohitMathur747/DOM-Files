@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../login/login.css">
+    <title>Login Page</title>
+</head>
+<style>
+    #message {
+        display:none;
+        color: #000;
+        position: relative;
+    }
+    
+    #message p {
+        padding: 10px 35px;
+        font-size: 18px;
+    }
+    
+    .valid {
+        color: green;
+    }
+    
+    .valid:before {
+        position: relative;
+        left: -35px;
+        content: "✔";
+    }
+    
+    .invalid {
+        color: red;
+    }
+    
+    .invalid:before {
+        position: relative;
+        left: -35px;
+        content: "✖";
+    }
+</style>
+<body>
+    <div class="header-wrapper">
+        <h1 class="text-center text-info bg-dark py-4">LOGIN PAGE</h1>
+    </div>
+    <div class="login-card">
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-sm-6">
+                    <form action="#" onsubmit="return validateLogin(this)">
+                        <label for="username"><b>User Name :</b><b class="text-danger">*</b></label>
+                        <input type="text" class="form-control text-danger my-2 py-3" id="username" name="username" placeholder="Enter User Name">
+                        <p id="usernameError" class="text-danger"></p>
+                        
+                        <label for="password"><b>Password :</b><b class="text-danger">*</b></label>
+                        <input type="password" class="form-control text-danger my-2 py-3" id="password" name="password" placeholder="Enter Password">
+                        <p id="passwordError" class="text-danger"></p>
+                        
+                        <label for="cpassword"><b>Confirm Password :</b><b class="text-danger">*</b></label>
+                        <input type="password" class="form-control text-danger my-2 py-3" id="cpassword" name="cpassword" placeholder="Enter Confirm Password">
+                        <p id="cpasswordError" class="text-danger"></p>
+                        <div id="message" class="ms-4 text-danger py-4">
+                            <p id="lower" class="invalid">
+                                <i>Step 1 : </i><b>Lowercase Letter</b>
+                            </p>
+                            <p id="capital" class="invalid">
+                                <i>Step 2 :</i> <b>Uppercase Letter</b>
+                            </p>
+                            <p id="number" class="invalid">
+                                <i>Step 3 :</i> <b>Number</b>
+                            </p>
+                            <p id="special" class="invalid">
+                                <i>Step 4 :</i> <b>Special Characters</b>
+                            </p>
+                            <p id="length" class="invalid">
+                                <i>Step 5 :</i> <b>Minmum 8 Characters</b>
+                            </p>
+                        </div>
+                        <button type="submit" class="btn-info text-light form-control">LOGIN</button>
+                    </form>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>    
+        </div>
+    </div>
+
+<script>
+    let username = document.getElementById("username"); 
+    let password = document.getElementById("password");
+    let cpassword = document.getElementById("cpassword");
+    let letter = document.getElementById("lower");
+    let capital = document.getElementById("capital");
+    let number = document.getElementById("number");
+    let special = document.getElementById("special");
+    let length = document.getElementById("length");
+
+function validateLogin(this_form){
+    let uname=this_form.username.value;
+    let pass=this_form.password.value;
+    let cpass=this_form.cpassword.value;
+    if(uname=="")
+    {
+        // document.getElementById("usernameError").innerHTML = "Please enter your username";
+        displayError("usernameError","Please enter your username");
+        //alert("Please enter your username");
+        this_form.username.focus();
+        return false;
+    }
+    if(pass=="")
+    {
+        displayError("usernameError","Please enter your Password");
+        //alert("Please enter your password");
+        this_form.password.focus();
+        return false;
+    }
+    if(cpass=="")
+    {
+        displayError("usernameError","Please enter Confirm Password");
+        //alert("Please enter your password");
+        this_form.password.focus();
+        return false;
+    }
+    if(pass != cpass)
+    {
+        displayError("usernameError","Password not Matched");
+        //alert("Password and Confirm Password does not match");
+        return false;
+    }
+return true;
+    }  
+
+password.onfocus = function() {
+    document.getElementById("message").style.display = "block";
+}
+
+password.onblur = function() {
+    document.getElementById("message").style.display = "none";
+}
+
+password.onkeyup = function() {
+    let lowerCaseLetters = /[a-z][a-z]/;
+    if(password.value.match(lowerCaseLetters)) {  
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+    } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+    }
+
+    let upperCaseLetters = /(?=.*[A-Z][A-Z])/;
+    if(password.value.match(upperCaseLetters)) {  
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+    } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+    }
+
+    let numbers = /[0-9[0-9]/;
+    if(password.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+    } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+    }
+
+    let specials = /[~`!@#$%&*()_+={}|\/:;"'<>,.?][~`!@#$%&*()_+={}|\/:;"'<>,.?]/g;
+    if(password.value.match(specials)) {  
+        special.classList.remove("invalid");
+        special.classList.add("valid");
+    } else {
+        special.classList.remove("valid");
+        special.classList.add("invalid");
+    }
+
+    if(password.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+    } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+    }
+}
+    function displayError(id,msg) {
+        document.getElementById(id).innerHTML = msg ? `<i class="fa-solid fa-triangle-exclamation"></i> ${msg}` : msg;
+    }
+    
+</script>
+
+</body>
+</html>

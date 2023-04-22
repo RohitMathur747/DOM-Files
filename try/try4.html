@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearInterval(z)">Click Me</button>
+    <script>
+        //---dates
+        //var d = new Date(2023,02,22);
+        //document.write(d);
+        
+        //---time---Click me
+        var a = new Date();
+        document.write(a);
+        var n = a.getTime();
+        var hour = a.getHours();
+        var minute = a.getMinutes();
+        var second = a.getSeconds();
+
+        document.write(hour+ ":"+minute+ ":"+second);
+
+        //-----only time view
+        var d = new Date();
+        var abc = d.toLocaleTimeString();
+        document.write(abc);
+        //----time out------------
+        var z = setTimeout(showalert,3000);
+        function showalert(){
+            alert("welcome to world");
+        }
+    </script>
+</body>
+</html>

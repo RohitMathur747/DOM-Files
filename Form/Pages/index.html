@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jspider</title>
+    <!--<script src="../Js/index.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #skillsContainer {
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 3px;
+            display: flex;
+            flex-wrap: wrap;
+            gap : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="" class="nav-brand text-center text-info text-decoration-none fs-3">JSpider</a>
+        </div>
+    </nav>
+    <main>
+        <form name="myform" id="studentFrom" action="./view.html">
+            <div class="container container-md border border-primary rounded mt-5  my-auto p-2 p-md-5">
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label for="fname">First Name<span class="text-danger"><b>*</b></span></label>
+                        <input id="fname" name="firstName" class="form-control" type="text"/>
+                        <p class="text-danger" id="fnameError"></p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="lname">Last Name</label>
+                        <input id="lname" name="lastName" class="form-control" type="text"/>
+                        <p class="text-danger"></p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label for="fname">Father Name<span class="text-danger"><b>*</b></span></label>
+                        <input id="faname" name="fatherName" class="form-control" type="text"/>
+                        <p id="fanameError" class="text-danger"></p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="email">Enter Gmail</label>
+                        <input id="email" name="email" class="form-control" type="text"/>
+                        <p id="emailError" class="text-danger"></p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label for="phone">Phone<span class="text-danger"><b>*</b></span></label>
+                        <div class="row">
+                            <div class="col-3">
+                                <select id="ccode" name="countryCode" class=" form-select">
+                                    <option value="+91">+91</option>
+                                    <option value="+92">+92</option>
+                                    <option value="+93">+93</option>
+                                    <option value="+94">+94</option>
+                                    <option value="+95">+95</option>
+                                    <option value="+96">+96</option>
+                                    <option value="+97">+97</option>
+                                    <option value="+98">+98</option>
+                                    <option value="+99">+99</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="phone" name="phone" class="form-control"/>
+                            </div>
+                            <p id="phoneError" class="text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="gender">Gender<span class="text-danger"><b>*</b></span></label>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="radio" value="male" name="gender" id="gender" class="form-check-input">
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" value="female" name="gender" id="gender" class="form-check-input">
+                                <label for="female">Female</label>
+                            </div>
+                            <p id="genderError" class="text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12 col-md-6">
+                        <label for="skillbox">Skills</label>
+                        <select id="skillbox" class="form-select" >
+                            <option>Select Skills</option>
+                        </select>
+                        <div class="form-control my-3" id="skillsContainer"></div>
+                        <p id="skillboxError" class="text-danger"></p>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="choose">Course<span class="text-danger"><b>*</b></span></label>
+                        <select id="choose" name="course" class="form-select">
+                            <option value="">Select course</option>
+                            <option value="MERN">MERN Fullstack</option>
+                            <option value="JAVA">JAVA Fullstack</option>
+                            <option value="PYTHON">Python Fullstack</option>
+                        </select>
+                        <p class="text-danger" id="chooseError"></p>  
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <input id="notarobot" type="checkbox" class="form-check-input">
+                        <label for="notarobot">I'm not a Robot</label>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-primary col-5">Submit</button>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </main>
+    <script>
+        const studentData = {
+            firstName : "",
+            lastName : "",
+            fatherName : "",
+            email : "",
+            countryCode : "",
+            phone : null ,
+            gender : "",
+            course : "", 
+            skilldList : []
+        }
+        const skillsConfig = ["HTML","CSS","JavaScript","Java","C++","Bootstrap 5","ReactJS","MongoDB","NodeJS","expressJS"];
+        const studentSkills = studentData.skilldList;
+        const skillsSelector = document.getElementById('skillbox');
+        (() => {            
+            skillsConfig.forEach((skill) => {
+                const option = document.createElement('option');
+                option.innerText = skill;
+                option.setAttribute('value',skill);
+                skillsSelector.appendChild(option);
+            })
+        })()
+        skillsSelector.addEventListener('change',(event) => {
+            const skill = event.target.value;
+            if(! studentSkills.includes(skill)) {
+                studentSkills.push(event.target.value);
+                createSkillButton(studentSkills);
+            }
+        })
+        function delectSkill(index) {
+            studentSkills.splice(index,1);
+            createSkillButton(studentSkills);
+        }
+        function createSkillButton(skillList) {
+            const skillsContainer = document.getElementById('skillsContainer');
+            skillsContainer.innerHTML = ""; 
+            skillList.forEach( (skill,index) => {
+                const button = document.createElement('button');
+                button.setAttribute('class',"btn btn-sm btn-primary px-3 rounded rounded-pill")
+                button.setAttribute('type',"button");
+                const span = document.createElement('span');
+                span.innerText = skill;
+                button.appendChild(span);
+                const i = document.createElement('i');
+                i.setAttribute('class',"fa fa-circle-xmark ms-2");
+                i.addEventListener('click',delectSkill.bind(this,index))
+                button.appendChild(i);
+                skillsContainer.appendChild(button);
+            })
+        }
+        const FORM = document.getElementById('studentFrom');
+        FORM.addEventListener('input',(event) => {
+            let name = event.target.name;
+            if(name === "phone")
+                studentData[event.target.name] = Number(event.target.value);
+            else {
+                studentData[event.target.name] = event.target.value;
+            }
+        })
+
+        FORM.addEventListener('submit',(event) => {
+            if(validateName(FORM.firstName) && validateFname(FORM.fatherName) && 
+            validateEmail(FORM.email) && validatePhone(FORM.phone) && 
+            validateGender(FORM.gender) && validateCourse(FORM.course)) {
+                
+            } else {
+                event.preventDefault();
+            }
+        })
+
+        function validateCourse(){
+            const selectedValue =  document.getElementById("choose").value;
+            console.log(selectedValue);
+            if(selectedValue==""){
+                displayError("choose","Please Select Any Course");
+                document.myform.selectedValue;
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function validateCountryCode(){
+            if(studentInfo.countryCode === ""){
+            displayError("ccode", "Please Select a Country Code")
+            return false;
+            } else{
+                document.getElementById("ccode", "")
+                return true;
+            }
+        }
+
+        function validateSkills(tag){
+            console.log(tag.length)
+            if (tag.length != 0){
+                displayError("skillsContainer", "")
+                return true;
+            }
+            else{
+                displayError("skillsContainer", "Select Your Skills")
+                return false;
+            }
+        }
+
+        function validateGender(tag){
+            let name = "gender" 
+            if(tag.value){
+                displayError("gender", "")
+                return true;
+            } else{
+                displayError("gender", "Please Select Your Gender")
+                return false;
+            } 
+        }
+
+    function validateFname(tag){
+        let value = tag.value;
+        let name = tag.name;
+        if(value){
+            if(/^[A-Z]/.test(value)){
+                displayError("faname","");
+                return true;
+        } else{
+                tag.focus();
+                displayError("faname", "Name Should Start With UpperCase")
+                return false;
+        }
+
+        } else{
+            tag.focus();
+            displayError("faname","Field Should Not be Empty");
+            return false;
+        }
+    }
+
+    function validateName(tag){
+        let value = tag.value;
+        let name = tag.name;
+            if(value){
+            if(/^[A-Z]/.test(value)){
+                displayError("fname","");
+                return true;
+            } else{
+                tag.focus();
+                displayError("fname", "Name Should Start With UpperCase")
+            return false;
+        }
+
+    } else{
+        tag.focus();
+        displayError("fname","Field Should Not be Empty");
+        return false;
+    }
+}
+
+function validatePhone(tag){
+    let value = tag.value;
+    let name = tag.name;
+    if(value){
+        if(/^[6-9][0-9]{9}$/.test(value)){
+            displayError("phone", "")
+            return true;
+        } else{
+            tag.focus();
+            displayError("phone", "Please Enter Valid Phone Number")
+            return false;
+
+        }
+    } else{
+        tag.focus()
+        displayError(name,"please Enter Your Phone Number")
+        return false;
+    }
+}
+
+function validateEmail(tag){ 
+    const value = tag.value;
+    const name = tag.name;
+    if(value) {
+        if(value.includes('@') && /.com$/.test(value) && (! /[!#$%^&*()_+|\/,><:";"''-]/.test(value))) {
+            displayError("email","");
+            return true;
+        } else {
+            tag.focus();
+            displayError("email","Invalid gmail");
+            return false;
+        }
+                
+    } else {
+            tag.focus();
+            displayError("email","Feild should not be empty")
+            return false;
+            }
+} 
+
+function displayError(id,msg) {
+    document.getElementById(id + "Error").innerHTML = msg ? `<i class="fa-solid fa-triangle-exclamation"></i> ${msg}` : msg;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearInterval(clock)">Click Me</button><br>
+    <p id="showClock"></p>
+    <script>
+        var clock = setInterval(clocktiming,1000)
+        function clocktiming(){
+            var d = new Date();
+            var abc = d.toLocaleTimeString();
+            document.getElementById('showClock').innerHTML = abc;
+        }
+    </script>
+</body>
+</html>

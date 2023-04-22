@@ -1,0 +1,9 @@
+body{
+    background-image: url("../login/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid wheat;
+    box-shadow: 5px grey;
+    background-position-x:300px;
+    background-position-y:-30px; 
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        var rohit = {
+            firstname:"rohit",
+            lastname:"mathur",
+            age:"26",
+            profession:"webdeveloper"
+        }
+        console.log(rohit);
+        console.log(rohit.lastname);
+
+        //--------change property name
+        rohit.profession = "reactdeveloper";
+        console.log(rohit);
+
+        //--------add property name value
+        rohit.middlename = "raj";
+        console.log(rohit);
+
+        //---------delete property name
+        delete rohit.middlename;
+        console.log(rohit);
+    </script>
+</body>
+</html>

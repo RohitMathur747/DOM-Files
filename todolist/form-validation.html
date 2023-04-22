@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Form Validation</title>
+</head>
+<body>
+    <h1 class="text-center bg-dark text-info p-4">J Spider</h1>
+    <div class="main my-4">
+        <div class="container border border-2 p-4 rounded">
+            <form>
+                <div class="row">    
+                    <div class="col-sm-6">
+                        <label for="name"><b>Enter First Name:</b></label>
+                        <input type="text" class="form-control" placeholder="Enter Name" name="" id="">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="name"><b>Enter First Name:</b></label>
+                        <input type="text" class="form-control" placeholder="Enter Name" name="" id="">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="mobile"><b>Enter Mobile No:</b></label>
+                        <input type="tel" class="form-control" placeholder="Enter Mobile No" name="" id="">
+                    </div>    
+                    <div class="col-sm-6">
+                        <label for="email"><b>Enter Email:</b></label>
+                        <input type="text" class="form-control" placeholder="Enter Name" name="" id="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 my-4">
+                        <label for="gender"><b>Gender: </b></label>
+                        Male: <input type="radio" name="gender" id="">
+                        Female: <input type="radio" name="gender" id="">
+                    </div>    
+                    <div class="col-sm-6">
+                        <label for="email"><b>Select Degree :</b></label>
+                        <select class="form-control">
+                            <option>--select Degree--</option>
+                            <option>BTech</option>
+                            <option>BSC</option>
+                            <option>BCA</option>
+                            <option>MBA</option>
+                            <option>MBBS</option>
+                            <option>B.COM</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 my-4">
+                        <label for="gender"><b>Student :</b></label>
+                        Fresher: <input type="radio" name="student" id="">
+                        Experience: <input type="radio" name="student" id="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 my-3">
+                        <label for="sub"><b>Select Stream :</b></label>
+                        <select class="form-control">
+                            <option>--select Stream--</option>
+                            <option>CS/IT</option>
+                            <option>ECE</option>
+                            <option>EEE</option>
+                            <option>Mechanical</option>
+                            <option>Civil</option>
+                            <option>AI/ML</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 my-3">
+                        <label><b>Skills :</b></label>
+                        <textarea class="form-control" cols="20" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label><b>D.O.B :</b></label>
+                        <input class="form-control" type="date" name="" id="">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="sub"><b>Select Skills :</b></label>
+                        <select class="form-control">
+                            <option>--select Skills--</option>
+                            <option>HTML</option>
+                            <option>CSS</option>
+                            <option>Bootstrap</option>
+                            <option>Java Script</option>
+                            <option>DOM</option>
+                            <option>React Js</option>
+                            <option>Mongo Db</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 my-3">
+                        <label for="password"><b>Permanent Address :</b></label>
+                        <textarea class="form-control" cols="20" rows="5"></textarea>
+                    </div>
+                    <div class="col-sm-6 my-3">
+                        <label for="password"><b>Temporary Address :</b></label>
+                        <textarea class="form-control" cols="20" rows="5"></textarea>
+                        <input type="checkbox" name="" id=""> <i>Same As Permanent Address</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 my-3">
+                        <label for="password"><b>Enter Password :</b></label>
+                        <input class="form-control" type="password" name="" id="">
+                    </div>
+                    <div class="col-sm-6 my-3">
+                        <label for="password"><b>Confirm Password :</b></label>
+                        <input class="form-control" type="password" name="" id="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="checkbox" name="" id="">
+                        <label for="notarobot">I'm not a Robot</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 my-2">
+                        <button class="btn-success text-center form-control">Submit</button>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>    
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

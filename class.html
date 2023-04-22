@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    <script>
+        class  Student {
+            static batch="Mararthalli Jspiders";
+            static num = 1;
+            constructor(name,course,TotalFee,PaidFee,d,m,y){
+                this.id = Student.num;
+                this.name = name;
+                this.course = course;
+                this.TotalFee = TotalFee;
+                this.PaidFee = PaidFee;
+                this.DOB = new PresentAge(d,m,y);
+                Student.num =Student.num + 1;
+            }
+            RemainingFee(){
+                let remfee = this.TotalFee - this.PaidFee;
+                return remfee;   
+            }
+        }
+
+        class PresentAge{
+            constructor(day,month,year){
+                this.day=day;
+                this.month=month;
+                this.year=year;
+            }
+            getAge(){
+                return `year : ${this.year} month : ${this.month} day : ${this.day}`;
+            }
+        }
+        let std1= new Student("Raone","MERN",48000,47500,8,4,1996);
+        console.log(std1);
+        // console.log(std1.TotalFee-std1.PaidFee);
+
+    </script>    
+</body>
+</html>

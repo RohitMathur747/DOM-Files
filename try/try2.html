@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="divone">
+        div one content is here
+        <button onclick="mypage('divone')">div one</button>
+    </div>
+    <div id="divtwo">
+        div one content is here
+        <button onclick="mypage('divtwo')">div two</button>
+    </div>
+    <div id="divthree">
+        div one content is here
+        <button onclick="mypage('divthree')">div three</button>
+    </div>
+
+    <button onclick="mywholepage()">whole page</button>
+
+    <!--<button onclick="myfun()">Click me</button>-->
+
+    <script>
+        //----link href
+        //function myfunc(){
+          //  window.location = "https://mail.google.com/mail/u/0/";
+        //}
+        //------print page
+            function mywholepage(){
+                window.print() = document.body.innerHTML;
+            }
+
+            function mypage(paravalue){
+                var backup = document.body.innerHTML;
+                var divcontent = document.getElementById(paravalue).innerHTML;
+                document.body.innerHTML = divcontent;
+                window.print();
+                document.body.innerHTML = backup;
+            }
+    </script>
+</body>
+</html>

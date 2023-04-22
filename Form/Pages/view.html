@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>View Student Records</title>
+</head>
+<body>
+    <header>
+        <h2 class=" text-center text-info bg-dark py-4">View Students Records</h2>
+    </header>
+    <div class="stud-record my-5">
+        <div class="container">
+            <div class="col-sm-12">
+                <table class="table table-bordered py-4 text-center" id="view-records">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Father Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Gender</th>
+                        <th>Course</th>
+                        <th>Skill List</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function readFormData(){
+            let formdata = {};
+            FormData["firstname"] = document.getElementById("firstname").value;
+            FormData["lastname"] = document.getElementById("lastname").value;
+            FormData["fathername"] = document.getElementById("fathername").value;
+            FormData["email"] = document.getElementById("email").value;
+            FormData["phone"] = document.getElementById("phone").value;
+            FormData["gender"] = document.getElementById("gender").value;
+            FormData["course"] = document.getElementById("course").value;
+            FormData["skillbox"] = document.getElementById("skillbox").value;
+            return formdata;      
+        }
+
+
+        function insertNewRecord(data){
+            var table = document.getElementById("")        
+        }
+    </script>
+</body>
+</html>

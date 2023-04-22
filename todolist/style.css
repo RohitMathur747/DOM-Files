@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+}
+ul>li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fa {
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}

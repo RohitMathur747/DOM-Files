@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card text-center text-info bg-dark">
+            <h1>BMI Calculator</h1>
+        </div>
+        <div class="card-body">
+            <form onsubmit="return false">
+                <label for="weight">Weight : </label>
+                <input class="form-control" name="weight" id="weight" type="number" placeholder="enter weight(KG)" required>
+                <label for="height">Height : </label>
+                <input class="form-control" name="height" id="height" type="text" placeholder="enter height(FT)" required>
+                <label for="bmivalue">BMI Value : </label>
+                <input class="form-control" name="bmivalue" id="bmivalue" type="text" required>
+                <button class="btn-success form-control my-3" onclick="getbmivalue()">Check BMI</button>
+
+            </form>
+        </div>
+        <div class="card-footer text-center bg-dark text-info"><h4>A healthy bmi ranges between 19 and 25</h4></div> 
+    </div>
+
+    <script>
+
+        function getbmivalue(){
+        var weight = document.getElementById('weight').value;
+        var height = document.getElementById('height').value;
+
+        height = height * 12;
+        height = height * 0.025;
+
+        var newbmivalue = weight / (height * height);
+        newbmivalue = Math.round(newbmivalue);    
+        document.getElementById('bmivalue').value = newbmivalue;
+        }
+
+    </script>
+</body>
+</html>

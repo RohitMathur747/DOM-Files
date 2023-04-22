@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <p id="abc">rohit</p>
+    <p class="xyz">mathur</p>
+    <p class="xyz">mathur1</p>
+    <p class="xyz">mathur2</p>
+
+    <ul><li>like</li><li>share</li><li>subcribe</li></ul>
+    <br>
+    <h1 id="changecss"> welcome to dom </h1>
+
+    <h1 id="changecss1"> rohit </h1>
+
+    <script>
+        var a = document.getElementById('abc').innerHTML;
+        //document.write(a);
+        var b = document.getElementsByClassName("xyz")[1].innerHTML;
+        //document.write(b);
+        var c = document.getElementsByTagName('p');
+        //document.write(c);
+        //console.log(c);
+        var d = document.querySelector('p').innerHTML;
+        document.write(d);
+
+        var child = document.body.children;
+        console.log(child);
+
+        // create a new child 
+
+        var para = document.createElement("p");
+        var textnode = document.createTextNode("this is new para");
+        para.appendChild(textnode);
+        console.log(para);
+
+        document.body.appendChild(para);
+
+        //first child and last child
+
+        var e = document.querySelector("ul");
+        console.log(e);
+
+        console.log(e.firstChild);
+        console.log(e.lastChild);
+
+        //change css
+        document.getElementById('changecss').style.color = "red";
+        
+        document.getElementById('changecss1').setAttribute("style","color:red;background-color:black;text-align:center;height:100px;");
+
+    </script>
+</body>
+</html>

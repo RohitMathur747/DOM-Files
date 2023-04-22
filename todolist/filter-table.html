@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Filter search</title>
+    <link rel="stylesheet" href="../todolist/filter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!--<h1> Filtering Table</h1>-->
+    <div class="head text-center bg-dark text-warning py-3">
+      <h1>Filter Table</h1>
+      <input type="text" class="form-control py-3 mb-3"  placeholder="Search ..." class="filter-input">
+    </div>
+
+    <div class="container">
+        <div class="output text-center"></div>
+    </div>
+    <script>
+        const table = [
+    {
+        name:'rohit',
+        age: '26',
+        gender:'male',
+        degree:'Btech',
+        course:'MERN',
+        marks:100,
+        Email:'rohit@gmail.com'
+    }, 
+    {
+        name: " Ram krishan",
+        age: '24',
+        gender:'male',
+        degree: "Engineer",
+        course: "java",
+        marks:90,
+        Email: "abrc@gmail.com",
+      },
+      {
+        name: "sam",
+        age: '28',
+        gender:'male',
+        degree: "Engineer",
+        course: "java",
+        marks:80,
+        Email: "agc@gmail.com",
+      },
+      {
+        name: "mahesh",
+        age: '12',
+        gender:'male',
+        degree: "Engineer",
+        course: "java core",
+        marks:75,
+        Email: "aic@gmail.com",
+      },
+      {
+        name: "mohit",
+        age: '25',
+        gender:'male',
+        degree: "doctor",
+        course: "java advanced",
+        marks:70,
+        Email: "mohit@gmail.com",
+      },
+      {
+        name: "rohan",
+        age: '27',
+        gender:'male',
+        degree: "b.com",
+        course: "c++",
+        marks:75,
+        Email: "abcr@gmail.com",
+      },
+      {
+        name: "mohan",
+        age: '29',
+        gender:'male',
+        degree: "msc",
+        course: "python",
+        marks:95,
+        Email: "abuc@gmail.com",
+      },
+      {
+        name: "model",
+        age: '25',
+        gender:'others',
+        degree: "mtech",
+        course: "cse",
+        marks:85,
+        Email: "abch@gmail.com",
+      }
+]
+
+const tableHeader = Object.keys(table[0]);
+const search = document.querySelector('.filter-input');
+const output = document.querySelector('.output');
+
+window.addEventListener('click', loadTable);     //DOMContentLoaded==click
+//search.addEventListener('input', filter);
+search.addEventListener('input', event);
+
+
+function loadTable(){
+    let temp = `<table> <tr>`;
+    tableHeader.forEach( header=> temp+= `<th> ${header.toUpperCase()} </th>`);
+    temp+=`<tr>`
+    table.forEach(row => {
+        temp +=`
+        <tr>
+          <td>${row.name}</td>
+          <td>${row.age}</td>
+          <td>${row.gender}</td>
+          <td>${row.degree}</td>
+          <td>${row.course}</td>
+          <td>${row.marks}</td>
+          <td>${row.Email}</td>
+        </tr>
+        `
+    });
+
+    temp+=`</table>`
+    output.innerHTML = temp;
+}
+
+
+//function filter(e)
+function event(e){
+let results;
+let temp ="";
+
+results = table.filter( item=> 
+    item.Email.toLowerCase().includes(e.target.value.toLowerCase()) || 
+    item.name.toLowerCase().startsWith(e.target.value.toLowerCase()) || 
+    item.gender.toLowerCase().includes(e.target.value.toLowerCase()) ||
+    item.course.toLowerCase().includes(e.target.value.toLowerCase()) ||
+    item.degree.toLowerCase().includes(e.target.value.toLowerCase()) ||
+    (item.marks + "").toLowerCase().includes(e.target.value.toLowerCase()) ||
+    item.age.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+   //  console.log(results)
+    if(results.length>0){
+        temp = `<table> <tr>`;
+        tableHeader.forEach( header=> temp+= `<th> ${header.toUpperCase()} </th>`);
+        temp+=`<tr>`
+        results.forEach(row => {
+            temp +=`
+            <tr>
+              <td>${row.name}</td>
+              <td>${row.age}</td>
+              <td>${row.gender}</td>
+              <td>${row.degree}</td>
+              <td>${row.course}</td>
+              <td>${row.marks}</td>
+              <td>${row.Email}</td>
+            </tr>
+            `
+        });
+        temp+=`</table>`  
+    }else{
+        temp =`<div class="no-item">Item Not Found </div>`
+    }
+
+    output.innerHTML=temp;
+}
+    </script>
+</body>
+</html>
